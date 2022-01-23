@@ -122,7 +122,7 @@ function gameRestart() {
     _gameScore = 0;
     _gameOver = false;
     _gameStart = false;
-    _gameTimeNum = 20;
+    _gameTimeNum = 30;
     GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
     countBlockSize();
     refreshGameLayer(GameLayer[0]);
@@ -175,7 +175,7 @@ function SubmitResults() {
 function gameTime() {
     _gameTimeNum--;
     if (_gameTimeNum <= 0) {
-        GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;时间到！';
+        GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;点到为止啊';
         gameOver();
         GameLayerBG.className += ' flash';
         createjs.Sound.play("end");
@@ -341,11 +341,11 @@ function shareText(score) {
         return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
     }
     SubmitResults();
-    if (score <= 49) return '试着好好练一下？';
-    if (score <= 99) return 'TCL';
-    if (score <= 149) return 'TQL';
-    if (score <= 199) return '您';
-    return '人？';
+    if (score <= 49) return '丢死人啦';
+    if (score <= 99) return '无心之过';
+    if (score <= 149) return '学有余力';
+    if (score <= 199) return '有影无';
+    return '大哥哥被你震感到了';
 }
 
 function toStr(obj) {
@@ -410,7 +410,7 @@ function goRank() {
 }
 console.log("不修改，好嘛？乱传又有什么用呢？(ˉ▽ˉ；)...")
 document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
+    if (e.keyCode == 123456) {
         return false
     }
 };
